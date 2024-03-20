@@ -1,0 +1,61 @@
+.homepage {
+    top:0;
+    left:0;
+    width: 100%;
+    height: 100%;
+}
+
+.background {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    display: block;
+    margin: 0;
+    padding: 0;
+}
+
+.background img {
+    position: relative;
+    width: 101%;
+    height: 60vh;
+    object-fit: cover;
+}
+
+.background span:nth-child(2) {
+    position: absolute;
+    color: white;
+    top: 30%;
+    left: 20%;
+    font-size: 40px;
+    font-family: sans-serif ;
+}
+
+.background span:nth-child(3) {
+    position: absolute;
+    color: #2bb266;
+    top: 50%;
+    left: 40%;
+    font-size: 50px;
+}
+
+.container {
+    display: block;
+    margin: 2rem;
+}
+
+.content {
+    margin: 6rem;
+    text-align: center;
+}
+.content p {
+    color: #2bb266;
+    font-size: 20px;
+    font-family: inherit;
+}
+
+.content h1 {
+    font-size: 40px;
+    margin-bottom: 1rem;
+    color: brown;
+}

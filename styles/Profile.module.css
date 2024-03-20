@@ -1,0 +1,8 @@
+.profileImgContainer {
+    margin-top: 0.25rem;
+}
+
+.profileImgContainer img {
+    border-radius: 50% ;
+    cursor: pointer;
+}

@@ -1,0 +1,44 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 0 2rem;
+    height: 5rem;
+    background: linear-gradient(to right, #6bbe57, #3a1919);
+}
+
+.header h1 {
+    margin-left: 1rem;
+    color: white;
+    font-size: 30px;
+    font-family: "Arial Black";
+    transition: color 1s ease;
+}
+
+.header h1:hover {
+    color: yellow;
+}
+
+.header ul {
+    list-style: none;
+    display: flex;
+    align-items: baseline;
+    margin-right: 1rem;
+}
+
+.header li {
+    margin: 0.5rem 3rem;
+}
+
+.header a {
+    color: white;
+    font-size: 20px;
+    transition: color 1s ease;
+}
+
+.header a:hover {
+    color: yellow;
+}
