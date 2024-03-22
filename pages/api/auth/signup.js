@@ -20,8 +20,6 @@ export default async function handler(req, res) {
             return;
         }
 
-        console.log(process.env.MONGODB_URL)
-
         const client = await MongoClient.connect(process.env.MONGODB_URL);
         const collections = client.db('Forum').collection('USERS');
 

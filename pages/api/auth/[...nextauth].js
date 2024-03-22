@@ -8,6 +8,16 @@ export default NextAuth({
     pages: {
         signIn: '/login'
     },
+    callbacks: {
+
+      async session({session, token, user}) {
+            if (session?.user) {
+                session.user.id = token.sub;
+            }
+
+            return session;
+      }
+    },
     session: {
         strategy: 'jwt'
     },
@@ -18,7 +28,7 @@ export default NextAuth({
                                                                     name: {label: 'name', type:'text'},
                                                                     surname: {label: 'surname', type: 'text'}},
         async authorize(credentials, req) {
-            console.log('passed')
+
             const client = await MongoClient.connect(process.env.MONGODB_URL);
             const collections = client.db('Forum').collection('USERS');
 
@@ -29,8 +39,6 @@ export default NextAuth({
                 throw new Error('No user registered in this email.');
             }
 
-            console.log(user)
-
             const validity = comparePassword(credentials.password, user.password);
 
             if (!validity){
@@ -38,7 +46,7 @@ export default NextAuth({
                 throw new Error('Wrong password. Please try again.');
             }
 
-            return {email: user.email};
+            return {name: user.name, surname: user.surname, email: user.email};
         }
     })]
 })

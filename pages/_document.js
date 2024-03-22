@@ -8,6 +8,7 @@ export default function Document() {
         <Main />
         <NextScript />
         <div id='notification'></div>
+        <div id='accountSettings'></div>
       </body>
     </Html>
   );

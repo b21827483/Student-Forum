@@ -1,13 +1,22 @@
 import Link from "next/link";
 
 import classes from '../../styles/MainNavigation.module.css'
-import {useSession} from "next-auth/react";
+import {signOut, useSession} from "next-auth/react";
+import {useState} from "react";
+
+import {CgProfile} from "react-icons/cg";
+import {RiEditBoxLine} from "react-icons/ri";
+import {IoMdNotificationsOutline} from "react-icons/io";
+import {CiSettings} from "react-icons/ci";
+import {IoIosHelpCircleOutline} from "react-icons/io";
+import {CiLogout} from "react-icons/ci";
 import ProfileButton from "../Profile/ProfileButton";
 
 function MainNavigation() {
 
     const {data: session, status} = useSession();
-    console.log(session, status)
+
+    console.log(session)
 
     return <header className={classes.header}>
         <Link href={'/'}>
@@ -22,7 +31,7 @@ function MainNavigation() {
                     {!session && status === 'unauthenticated' && <Link href={'/login'}>Login</Link>}
                 </li>
                 <li>
-                    {session && <ProfileButton />}
+                    {session && <ProfileButton /> }
                 </li>
             </ul>
         </nav>

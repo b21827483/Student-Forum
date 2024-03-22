@@ -1,5 +1,6 @@
 import {Fragment} from "react";
 import MainNavigation from "./MainNavigation";
+import ProfileButton from "../Profile/ProfileButton";
 
 function Layout(props) {
 

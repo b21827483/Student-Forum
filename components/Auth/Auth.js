@@ -58,10 +58,7 @@ export function Auth({isLogin}) {
                     email: email,
                     password: password,
                     redirect: false
-                })
-
-                console.log(response)
-
+                });
 
                 if (response.error) {
                     setReqStatus('Error');
